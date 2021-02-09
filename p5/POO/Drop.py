@@ -5,13 +5,13 @@ from pygame.math import Vector2
 
 
 class Drop:
-    def __int__(self, largeur):
+    def __init__(self, largeur):
         self.gravity = random.randint(5, 20)
         self.size = random.randint(10, 20)
         self.R = random.randint(0, 255)
         self.V = random.randint(0, 255)
         self.B = random.randint(0, 255)
-        self.position = Vector2(random.randint(0, largeur), 0)
+        self.position = Vector2(random.randint(0, largeur), random.randint(-largeur,0))
 
     def tomber(self, hauteur):
         self.position.y = self.position.y + self.gravity
